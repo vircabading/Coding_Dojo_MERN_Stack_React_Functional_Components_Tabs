@@ -10,6 +10,7 @@ const ContentComponent = (props) => {
             <h3 className='mb-2'>Content:</h3>
             <div>
                 {
+                    // **** Iterate through each tab and display its content if it is Active ********
                     props.tabs.map(
                         (tab, idx) => {
                             if (tab.isActive) {

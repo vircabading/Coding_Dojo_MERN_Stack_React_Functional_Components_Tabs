@@ -10,7 +10,7 @@ import ContentComponent from './components/ContentComponent';
 function App() {
   // //// FIELDS /////////////////////////////////////////////////
   // An Array of Tab Objects
-  //    Each Tab contains a Label and Content
+  //    Each Tab contains a Label, Content, and isActive
   const [tabs, setTabs] = useState([
     {
       label: "Home",
@@ -32,29 +32,31 @@ function App() {
 
   // //// CALL BACK FUNCTION //////////////////////////////////////
   const handleTabOnClick = (targetLabel) => {
-    console.log("*** In Handle Click in App JS *****");
-    console.log("target label:", targetLabel);
+
+    // **** Go through all the tabs and make the tab that is being targeted become active
     setTabs( (tabs) => {
       let newTabs = [];
+      // Iterate through all the tabs
       for (let i=0; i< tabs.length; i++) {
-        console.log("In for loop | label", tabs[i].label, " | target label:", targetLabel);
+        // If this tab's label is the target label, make this tab active
         if (tabs[i].label == targetLabel) {
           newTabs.push({
             label: tabs[i].label,
             content: tabs[i].content,
             isActive: true
           });
-        } else {
+        } 
+        // Else, if this tab is not the target label, then make this tab inactive
+        else {
           newTabs.push (
             {
               label: tabs[i].label,
               content: tabs[i].content,
               isActive: false
             }
-          ) 
+          )
         }
       }
-      console.log("newTabs:", JSON.stringify(newTabs));
       return newTabs;
     });
   }
