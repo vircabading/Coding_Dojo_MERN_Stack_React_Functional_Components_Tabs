@@ -25,7 +25,7 @@ function App() {
     {
       label: "Gaming",
       content: "Let's do this. 🎮 Gaming Content",
-      isActive: false;
+      isActive: false
     }
   ]);
 
@@ -41,7 +41,7 @@ function App() {
       {/* **** TABS COMPONENT ********************************* */}
       <TabsComponent tabs={ tabs } />
       {/* **** CONTENT COMPONENT ****************************** */}
-      <ContentComponent />
+      <ContentComponent tabs={ tabs } />
     </div>
   );
 }
