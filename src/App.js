@@ -31,15 +31,39 @@ function App() {
 
 
   // //// CALL BACK FUNCTION //////////////////////////////////////
-  const handleTabOnClick = () => {
-    
+  const handleTabOnClick = (targetLabel) => {
+    console.log("*** In Handle Click in App JS *****");
+    console.log("target label:", targetLabel);
+    setTabs( (tabs) => {
+      let newTabs = [];
+      for (let i=0; i< tabs.length; i++) {
+        console.log("In for loop | label", tabs[i].label, " | target label:", targetLabel);
+        if (tabs[i].label == targetLabel) {
+          newTabs.push({
+            label: tabs[i].label,
+            content: tabs[i].content,
+            isActive: true
+          });
+        } else {
+          newTabs.push (
+            {
+              label: tabs[i].label,
+              content: tabs[i].content,
+              isActive: false
+            }
+          ) 
+        }
+      }
+      console.log("newTabs:", JSON.stringify(newTabs));
+      return newTabs;
+    });
   }
 
   // //// OUTPUT //////////////////////////////////////////////////
   return (
     <div className="App">
       {/* **** TABS COMPONENT ********************************* */}
-      <TabsComponent tabs={ tabs } />
+      <TabsComponent tabs={ tabs } handleTabOnClick={ handleTabOnClick }/>
       {/* **** CONTENT COMPONENT ****************************** */}
       <ContentComponent tabs={ tabs } />
     </div>

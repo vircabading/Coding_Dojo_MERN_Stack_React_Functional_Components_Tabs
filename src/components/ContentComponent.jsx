@@ -1,5 +1,9 @@
 import React from 'react'
 
+/////////////////////////////////////////////////////////////////////
+//  CONTENT COMPONENT
+/////////////////////////////////////////////////////////////////////
+
 const ContentComponent = (props) => {
     return (
         <div className='bg-white border border-primary rounded p-2'>
@@ -9,7 +13,7 @@ const ContentComponent = (props) => {
                     props.tabs.map(
                         (tab, idx) => {
                             if (tab.isActive) {
-                                return <div>{ tab.content }</div>
+                                return <div key={ idx }>{ tab.content }</div>
                             }
                             return;
                         }
