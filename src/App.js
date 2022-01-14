@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import TabsComponent from './components/TabsComponent';
+
+//////////////////////////////////////////////////////////////////
+//  ROOT APPLICATION
+//////////////////////////////////////////////////////////////////
 
 function App() {
+  // //// FIELDS /////////////////////////////////////////////////
+  // An Array of Tab Objects
+  //    Each Tab contains a Label and Content
+  const [tabs, setTabs] = useState([
+    {
+      label: "Home",
+      content:"This is a Home 🏡 Tab's Content"
+    },
+    {
+      label: "Work",
+      content: "This is Work Related content 🏢"
+    },
+    {
+      label: "Gaming",
+      content: "Let's do this. 🎮 Gaming Content"
+    }
+  ]);
+
+
+  // //// CALL BACK FUNCTION //////////////////////////////////////
+  const handleTabOnClick = () => {
+    
+  }
+
+  // //// OUTPUT /////////////////////////////////////////////////
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TabsComponent />
     </div>
   );
 }
