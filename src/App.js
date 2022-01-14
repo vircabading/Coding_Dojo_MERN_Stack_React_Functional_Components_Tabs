@@ -14,15 +14,18 @@ function App() {
   const [tabs, setTabs] = useState([
     {
       label: "Home",
-      content:"This is a Home 🏡 Tab's Content"
+      content:"This is a Home 🏡 Tab's Content",
+      isActive: true
     },
     {
       label: "Work",
-      content: "This is Work Related content 🏢"
+      content: "This is Work Related content 🏢",
+      isActive: false
     },
     {
       label: "Gaming",
-      content: "Let's do this. 🎮 Gaming Content"
+      content: "Let's do this. 🎮 Gaming Content",
+      isActive: false;
     }
   ]);
 
