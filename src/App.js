@@ -33,32 +33,20 @@ function App() {
   // //// CALL BACK FUNCTION //////////////////////////////////////
   const handleTabOnClick = (targetLabel) => {
 
-    // **** Go through all the tabs and make the tab that is being targeted become active
-    setTabs( (tabs) => {
-      let newTabs = [];
-      // Iterate through all the tabs
-      for (let i=0; i< tabs.length; i++) {
-        // If this tab's label is the target label, make this tab active
-        if (tabs[i].label == targetLabel) {
-          newTabs.push({
-            label: tabs[i].label,
-            content: tabs[i].content,
-            isActive: true
-          });
-        } 
-        // Else, if this tab is not the target label, then make this tab inactive
-        else {
-          newTabs.push (
-            {
-              label: tabs[i].label,
-              content: tabs[i].content,
-              isActive: false
-            }
-          )
-        }
+    // **** Go through all the tabs and make the tab that is being targeted become active';
+    let updatedTabs = [...tabs];
+    // **** Iterate through all the tabs ********
+    for (let idx=0; idx<updatedTabs.length; idx++) {
+      // **** If this tab is the target tab, then  make it Active
+      if (updatedTabs[idx].label === targetLabel) {
+        updatedTabs[idx].isActive = true;
+      } 
+      // **** If this tab is NOT the target tab, then make it Not Active
+      else {
+        updatedTabs[idx].isActive = false;
       }
-      return newTabs;
-    });
+    }
+    setTabs(updatedTabs);
   }
 
   // //// OUTPUT //////////////////////////////////////////////////
