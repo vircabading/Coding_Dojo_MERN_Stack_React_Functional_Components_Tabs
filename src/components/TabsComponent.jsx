@@ -2,16 +2,21 @@ import React from 'react'
 
 const TabsComponent = (props) => {
     return (
-        <div className='bg-white rounded'>
-            <h3>Tabs Component</h3>
-            <p>{ JSON.stringify(props.tabs) }</p>
+        <div className='mb-3'>
+            <h3>Tabs:</h3>
             <div className="row">
                 {
                     props.tabs.map(
                         (tab, idx) => {
-                            return <div className="col bg-info rounded m-3" key={ idx } >
-                                { tab.label }
-                            </div>;
+                            if (tab.isActive) {
+                                return <div className="col bg-primary rounded m-3 p-2" key={ idx } >
+                                    <strong>{tab.label}</strong>
+                                </div>;
+                            } else {
+                                return <div className="col bg-secondary rounded m-3 p-2" key={ idx } >
+                                    <strong>{tab.label}</strong>
+                                </div>;
+                            }
                     }
                     )
                 }
