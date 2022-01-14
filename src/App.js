@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import TabsComponent from './components/TabsComponent';
+import ContentComponent from './components/ContentComponent';
 
 //////////////////////////////////////////////////////////////////
 //  ROOT APPLICATION
@@ -31,10 +32,13 @@ function App() {
     
   }
 
-  // //// OUTPUT /////////////////////////////////////////////////
+  // //// OUTPUT //////////////////////////////////////////////////
   return (
     <div className="App">
-      <TabsComponent />
+      {/* **** TABS COMPONENT ********************************* */}
+      <TabsComponent tabs={ tabs } />
+      {/* **** CONTENT COMPONENT ****************************** */}
+      <ContentComponent />
     </div>
   );
 }
