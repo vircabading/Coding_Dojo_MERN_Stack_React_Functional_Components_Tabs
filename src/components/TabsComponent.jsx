@@ -6,11 +6,12 @@ import React from 'react'
 
 const TabsComponent = (props) => {
 
+    // //// HANDLE A CLICK ON A TAB /////////////////////////////////
     const handleClick = (label) => {
-        console.log("In Handle Click", label);
         props.handleTabOnClick(label);
     }
 
+    // //// OUTPUT //////////////////////////////////////////////////
     return (
         <div className='mb-3'>
             <h3>Tabs:</h3>
